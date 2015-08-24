@@ -195,20 +195,23 @@ oppia.controller('Gallery', [
   // SEARCH FUNCTIONALITY
 
   $scope.allExplorationsInOrder = [];
-  $scope.numberOfExplorationsPerGroup = 2;
+  var NUM_EXPLORATIONS_PER_GROUP = 2;
 
   var _populateExplorations = function(data) {
     var explorationGroupsList = [];
     for (var i = 0; i < data.explorations_list.length; i++) {
-      explorationGroupsList.push((data.explorations_list).slice(i, i + $scope.numberOfExplorationsPerGroup));
+      explorationGroupsList.push((data.explorations_list).slice(
+        i, i + NUM_EXPLORATIONS_PER_GROUP));
+      i += (NUM_EXPLORATIONS_PER_GROUP - 1);
     }
     $scope.allExplorationsInOrder = $scope.allExplorationsInOrder.concat(
       explorationGroupsList);
-  }
+  };
 
   // Called when the page loads, and after every search query.
   var _refreshGalleryData = function(data, hasPageFinishedLoading) {
     $scope.searchIsLoading = false;
+    $scope.allExplorationsInOrder = [];
     _populateExplorations(data);
     $scope.finishedLoadingPage = hasPageFinishedLoading;
     $rootScope.loadingMessage = '';

@@ -60,7 +60,7 @@ CURRENT_EXPLORATION_STATES_SCHEMA_VERSION = 5
 
 # The default number of exploration tiles to load at a time in the gallery
 # page.
-GALLERY_PAGE_SIZE = 10
+GALLERY_PAGE_SIZE = 20
 
 # The default number of commits to show on a page in the exploration history
 # tab.
