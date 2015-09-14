@@ -371,6 +371,13 @@ NG_IMG_CROP_ZIP_URL = (
 NG_IMG_CROP_ZIP_ROOT_NAME = 'ngImgCrop-%s' % NG_IMG_CROP_REV
 NG_IMG_CROP_TARGET_ROOT_NAME = 'ng-img-crop-%s' % NG_IMG_CROP_REV
 
+GUPPY_REV = '386c605fbff9226a187b3654e8792b01642fb358'
+GUPPY_ROOT_NAME = 'guppy-386c60'
+GUPPY_ZIP_URL = (
+    'https://github.com/daniel3735928559/guppy/archive/%s.zip' % GUPPY_REV)
+GUPPY_ZIP_ROOT_NAME = 'guppy-%s' % GUPPY_REV
+GUPPY_TARGET_ROOT_NAME = GUPPY_ROOT_NAME
+
 download_and_unzip_files(
     BOWER_MATERIAL_ZIP_URL, THIRD_PARTY_STATIC_DIR,
     BOWER_MATERIAL_ZIP_ROOT_NAME, BOWER_MATERIAL_TARGET_ROOT_NAME)
@@ -417,6 +424,9 @@ download_and_unzip_files(
 download_and_unzip_files(
     NG_IMG_CROP_ZIP_URL, THIRD_PARTY_STATIC_DIR,
     NG_IMG_CROP_ZIP_ROOT_NAME, NG_IMG_CROP_TARGET_ROOT_NAME)
+download_and_unzip_files(
+    GUPPY_ZIP_URL, THIRD_PARTY_STATIC_DIR,
+    GUPPY_ZIP_ROOT_NAME, GUPPY_TARGET_ROOT_NAME)
 # MathJax is too big. Remove many unneeded files by following these
 # instructions:
 #   https://github.com/mathjax/MathJax/wiki/Shrinking-MathJax-for-%22local%22-installation
