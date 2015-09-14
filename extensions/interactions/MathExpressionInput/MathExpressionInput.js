@@ -29,16 +29,12 @@ oppia.directive('oppiaInteractiveMathExpressionInput', [
       controller: ['$scope', '$attrs', '$timeout', 'focusService',
           function($scope, $attrs, $timeout, focusService) {
         $scope.divId = Math.random().toString(36).slice(2);
-
-        guppy_init('/third_party/static/guppy-386c60/libguppy/transform.xsl');
         $timeout(function() {
           new Guppy($scope.divId, {});
         });
 
-        $scope.answer = '';
-        $scope.labelForFocusTarget = $attrs.labelForFocusTarget || null;
-
-        $scope.submitAnswer = function(answer) {
+        $scope.submitAnswer = function() {
+          var answer = GUPPY_INSTANCES[$scope.divId].content('calc');
           if (answer !== undefined && answer !== null) {
             $scope.$parent.$parent.submitAnswer(answer);
           }
