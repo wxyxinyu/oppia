@@ -34,7 +34,7 @@ oppia.directive('oppiaInteractiveMathExpressionInput', [
         });
 
         $scope.submitAnswer = function() {
-          var answer = GUPPY_INSTANCES[$scope.divId].content('calc');
+          var answer = Guppy.instances[$scope.divId].content('calc');
           if (answer !== undefined && answer !== null) {
             $scope.$parent.$parent.submitAnswer(answer);
           }

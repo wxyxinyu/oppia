@@ -371,8 +371,8 @@ NG_IMG_CROP_ZIP_URL = (
 NG_IMG_CROP_ZIP_ROOT_NAME = 'ngImgCrop-%s' % NG_IMG_CROP_REV
 NG_IMG_CROP_TARGET_ROOT_NAME = 'ng-img-crop-%s' % NG_IMG_CROP_REV
 
-GUPPY_REV = '386c605fbff9226a187b3654e8792b01642fb358'
-GUPPY_ROOT_NAME = 'guppy-386c60'
+GUPPY_REV = 'a30d0e885da73fbdefa29676dbbb8c852aeaf383'
+GUPPY_ROOT_NAME = 'guppy-a30d0e'
 GUPPY_ZIP_URL = (
     'https://github.com/daniel3735928559/guppy/archive/%s.zip' % GUPPY_REV)
 GUPPY_ZIP_ROOT_NAME = 'guppy-%s' % GUPPY_REV
