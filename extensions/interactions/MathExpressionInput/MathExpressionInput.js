@@ -26,15 +26,16 @@ oppia.directive('oppiaInteractiveMathExpressionInput', [
       restrict: 'E',
       scope: {},
       templateUrl: 'interaction/MathExpressionInput',
-      controller: ['$scope', '$attrs', '$timeout', 'focusService',
-          function($scope, $attrs, $timeout, focusService) {
-        $scope.divId = Math.random().toString(36).slice(2);
+      controller: ['$scope', '$attrs', '$timeout', '$element', 'focusService',
+          function($scope, $attrs, $timeout, $element, focusService) {
+        var guppyDivId = null;
         $timeout(function() {
-          new Guppy($scope.divId, {});
+          var guppyDivElt = $element[0].querySelector('.guppy-div');
+          guppyDivId = (new Guppy(guppyDivElt, {})).editor.id;
         });
 
         $scope.submitAnswer = function() {
-          var answer = Guppy.instances[$scope.divId].content('calc');
+          var answer = Guppy.instances[guppyDivId].get_content('calc');
           if (answer !== undefined && answer !== null) {
             $scope.$parent.$parent.submitAnswer(answer);
           }
