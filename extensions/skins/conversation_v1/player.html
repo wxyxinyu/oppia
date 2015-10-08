@@ -124,14 +124,21 @@
         </div>
       </md-card>
 
-      <div class="conversation-skin-supplemental-card-container" ng-class="{'conversation-skin-right-card-container': isSupplementalCardNonempty() && isPanelVisible(PANEL_TUTOR) && isPanelVisible(PANEL_SUPPLEMENTAL)}" ng-if="isSupplementalCardNonempty() && activeCard.interactionHtml">
+      <div class="conversation-skin-supplemental-card-container" ng-class="{'conversation-skin-right-card-container': isSupplementalCardNonempty() && isPanelVisible(PANEL_TUTOR) && isPanelVisible(PANEL_SUPPLEMENTAL)}" ng-if="isSupplementalCardNonempty()">
         <md-card ng-show="isPanelVisible(PANEL_SUPPLEMENTAL)"
                  class="conversation-skin-supplemental-card">
-          <div ng-if="activeCard.interactionIsDisabled" class="conversation-skin-supplemental-card-overlay">
+          <div ng-if="!activeCard.interactionIsInline">
+            <div ng-if="activeCard.interactionIsDisabled" class="conversation-skin-supplemental-card-overlay">
+            </div>
+            <div class="protractor-test-conversation-input"
+                 angular-html-bind="transcript[currentProgressDotIndex].interactionHtml">
+            </div>
           </div>
-          <div class="protractor-test-conversation-input"
-               angular-html-bind="transcript[currentProgressDotIndex].interactionHtml">
-          </div>
+
+          <!-- TODO(sll): What to do if there is both a gadget and a
+               supplemental interaction in the same card? -->
+          <oppia-gadget-panel panel-contents="gadgetPanelsContents.supplemental">
+          </oppia-gadget-panel>
         </md-card>
       </div>
     </div>

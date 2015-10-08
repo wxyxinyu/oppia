@@ -236,10 +236,13 @@ ALLOWED_GADGETS = {
     'ScoreBar': {
         'dir': os.path.join(GADGETS_DIR, 'ScoreBar')
     },
+    'PencilCode': {
+        'dir': os.path.join(GADGETS_DIR, 'PencilCode')
+    },
 }
 
 # Gadgets subclasses must specify a valid panel option from this list.
-ALLOWED_GADGET_PANELS = ['bottom']
+ALLOWED_GADGET_PANELS = ['bottom', 'supplemental']
 
 # Demo explorations to load on startup. The id assigned to each exploration
 # is based on the index of the exploration in this list, so if you want to
