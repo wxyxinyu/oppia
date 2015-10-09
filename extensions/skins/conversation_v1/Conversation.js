@@ -287,7 +287,7 @@ oppia.directive('conversationSkin', [function() {
       $scope.isSupplementalCardNonempty = function() {
         return (
           !$scope.activeCard.interactionIsInline ||
-          $scope.doesActiveCardHaveSupplementalGadgets);
+          $scope.doesActiveCardHaveSupplementalGadgets());
       };
 
       $scope.isPanelVisible = function(panelName) {
